@@ -37,6 +37,15 @@
 
   }
 
+
+  function skype()
+  {
+
+    url = "skype:" + $('#exampleInputName2').val() + "?call";
+    this.location = url;
+
+  }
+
   </script>
 
   <body>
@@ -64,6 +73,7 @@
 
             <p class="lead">
               <a href="javascript:go()" class="btn btn-lg btn-default">Call Now!</a>
+              <a href="javascript:skype()" class="btn btn-lg btn-default">Skype Now!</a>
             </p>
           </div>
 
