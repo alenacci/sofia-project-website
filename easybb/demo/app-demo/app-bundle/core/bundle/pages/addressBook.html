@@ -1,0 +1,52 @@
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="center sliding">Rubrica</div>
+    <div class="right"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="addressBook" class="page">
+
+    <!-- Search bar -->
+      <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+        <div class="searchbar-input">
+          <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
+        </div><a href="#" class="searchbar-cancel">Cancel</a>
+      </form>
+     
+      <!-- Search bar overlay -->
+      <div class="searchbar-overlay"></div>
+     
+      <div class="page-content">
+        <!-- This block will be displayed if nothing found -->
+        <div class="content-block searchbar-not-found">
+          <div class="content-block-inner">Nothing found</div>
+        </div>
+     
+        <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+        <div class="list-block list-block-search searchbar-found">
+          <ul>{{#each this}}
+            <li>
+                <a href="pages/contactDetails.html" class="item-content item-link" data-context-name="addressBook.{{@index}}">
+                <div class="item-inner">
+                  <div class="item-title">{{name}} {{surname}}, <small>{{city}} ({{district}})</small></div>
+                </div>
+              </a>
+            </li>{{/each}}
+          </ul>        
+        </div>
+      </div>
+
+    <!-- Bottom Bar -->
+      <div class="toolbar">
+          <div class="toolbar-inner">
+               <a href="#" class="link"></a>
+              <a href="pages/newCustomer.html" class="link">Nuovo cliente</a>
+               <a href="#" class="link"></a>
+          </div>
+      </div>
+
+  </div>
+</div>

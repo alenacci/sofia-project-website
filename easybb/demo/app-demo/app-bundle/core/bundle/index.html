@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="../../dist/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="../../dist/css/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+  </head>
+  <body class="theme-orange layout-white">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p><a href="pages/newReservation.html">Nuova prenotazione</a></p>
+        <p><a href="pages/addressBook.html">Rubrica</a></p>
+        <p><a href="pages/calendar.html">Calendario</a></p>
+        <hr>
+        <p><a href="pages/settings.html">Impostazioni</a></p>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here test</p>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <div class="pages navbar-through toolbar-through">
+          <!-- Index Page-->
+          <div data-page="index" class="page" style="background-image: url('images/background_1.jpg'); background-size: 100%;">
+            <div class="page-content">
+
+              <div class="content-block">
+                  <p align="center"><img src="images/EasyBBLogo.png" width="200px"></p>
+                  <h3 align="center">L'app più semplice per gestire il tuo hotel, B&B, agriturimo, rifugio.</h3>
+                  <div style="position: fixed; bottom: 0; width: 90%;">
+                    <p><a href="pages/login.html" class="button button-round active">Effettua il Login</a></p>
+                    <p><a href="pages/registration.html" class="button button-round active">Registrati</a></p>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="../../dist/js/framework7.min.js"></script>
+
+    <!-- Extenral Libraries (Parse)-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+    
+    <!-- Pages JS-->
+    <script type="text/javascript" src="js/contactPageController.js"></script>
+    <script type="text/javascript" src="js/carsPageController.js"></script>
+    <script type="text/javascript" src="js/projectsPageController.js"></script>
+    <script type="text/javascript" src="js/registrationPageController.js"></script>
+    <script type="text/javascript" src="js/parseTestPageController.js"></script>
+    <script type="text/javascript" src="js/loginPageController.js"></script>
+    <script type="text/javascript" src="js/privacyPageController.js"></script>
+    <script type="text/javascript" src="js/newReservationPageController.js"></script>
+    <script type="text/javascript" src="js/newCustomerPageController.js"></script>
+    <script type="text/javascript" src="js/addressBookPageController.js"></script>
+    <script type="text/javascript" src="js/contactDetailsPageController.js"></script>
+    <script type="text/javascript" src="js/calendarPageController.js"></script>
+    <script type="text/javascript" src="js/settingsPageController.js"></script>
+
+
+    
+
+
+  </body>
+</html>
