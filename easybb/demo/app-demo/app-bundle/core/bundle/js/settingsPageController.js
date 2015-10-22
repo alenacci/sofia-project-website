@@ -4,13 +4,20 @@ $$(document).on('pageBeforeInit', function (e) {
     // Code for Services page
     if (page.name === 'settings') {
 
-        myApp.alert("Non disponibile", 'Errore!');
         jsonContext = {};
 
         $$.get('pages/settings.html', {}, function (data) {
             var compiledTemplate = Template7.compile(data);
             var htmlContent = compiledTemplate(jsonContext);
             $$(page.container).html(htmlContent);
+
+            $$('#logoutButton').on('click', function(){
+                
+                Parse.User.logOut();
+                mainView.router.loadPage("index.html")           
+
+            }); 
+
         });
 
     }
