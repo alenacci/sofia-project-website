@@ -32,6 +32,9 @@ $$(document).on('pageBeforeInit', function (e) {
             ]
         };
 
+        //Updating the app context
+        myApp.template7Data.projects = jsonContext;
+
         $$.get('pages/projects.html', {}, function (data) {
             var compiledTemplate = Template7.compile(data);
             var htmlContent = compiledTemplate(jsonContext);

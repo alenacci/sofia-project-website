@@ -40,6 +40,9 @@ $$(document).on('pageBeforeInit', function (e) {
                         },
                     ];
 
+        //Updating the context
+        myApp.template7Data.cars = jsonContext;
+
         $$.get('pages/cars.html', {}, function (data) {
             var compiledTemplate = Template7.compile(data);
             var htmlContent = compiledTemplate(jsonContext);

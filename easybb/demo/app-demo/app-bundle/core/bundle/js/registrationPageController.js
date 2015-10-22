@@ -16,6 +16,19 @@ $$(document).on('pageBeforeInit', function (e) {
                 
                 var formData = myApp.formToJSON('#theForm');
 
+
+                if (formData.hotelClass == "")
+                {
+                    myApp.alert("Seleziona la tipologia di struttura", "Errore");
+                    return;
+                }
+
+                if (formData.numberOfRooms == "")
+                {
+                    myApp.alert("Seleziona il numero di camere", "Errore");
+                    return;
+                }
+
                 if (formData.district == "")
                 {
                     myApp.alert("Seleziona la provincia", "Errore");
@@ -51,7 +64,8 @@ $$(document).on('pageBeforeInit', function (e) {
                 var user = new Parse.User();
                 user.set("hotelName", formData.hotelName);
                 user.set("hotelClass", formData.hotelClass);         
-                user.set("district", formData.district);              
+                user.set("district", formData.district);        
+                user.set("numberOfRooms", formData.numberOfRooms);        
 
                 user.set("name", formData.name);
                 user.set("surname", formData.surname);

@@ -2,7 +2,7 @@
 <div class="navbar">
   <div class="navbar-inner">
     <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-    <div class="center sliding">{{vendor}} {{model}}</div>
+    <div class="center sliding">Dettagli</div>
     <div class="right"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
   </div>
 </div>
@@ -10,17 +10,28 @@
   <div data-page="contactDetails" class="page">
     <div class="page-content">
       <div class="content-block">
-        <div class="content-block-inner">
-          <h3>{{vendor}} {{model}}</h3>
-          <ul>
-            <li><b>Power</b> - {{power}} hp</li>
-            <li><b>Max speed</b> - {{speed}} km/h</li>
-            <li><b>Weight</b> - {{weight}} kg</li>
-            <li><b>Color</b> - {{color}}</li>
-            <li><b>Year</b> - {{year}}</li>
-          </ul>
+
+
+        <div class="card">
+          <div class="card-header"><b>{{name}} {{surname}}</b></div>
+          <div class="card-content">
+            <div class="card-content-inner">
+              <p><b>Indirizzo:</b><br>{{address}}, {{zip}} {{city}} ({{district}})</p>
+              <p><b>Telefono:</b><br> {{phone}}</p>
+              <p><b>Cellulare:</b><br> {{mobile}}</p>
+              <p><b>E-mail:</b><br> {{email}}</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            {{notes}}
+          </div>
         </div>
+
+        
+
+
       </div>
     </div>
   </div>
 </div>
+

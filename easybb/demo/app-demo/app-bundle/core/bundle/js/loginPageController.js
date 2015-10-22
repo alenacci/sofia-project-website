@@ -23,7 +23,7 @@ $$(document).on('pageBeforeInit', function (e) {
                   success: function(user) {
                         myApp.hidePreloader();
                         myApp.alert('Login effettuato!', 'Conferma!', function () {
-                            mainView.router.loadPage('pages/addressBook.html');
+                            mainView.router.loadPage(DEFAULT_AFTER_LOGIN_PAGE);
                         });
                   },
                   error: function(user, error) {

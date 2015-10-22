@@ -23,14 +23,24 @@ $$(document).on('pageBeforeInit', function (e) {
               //alert(results[i].id + ' - ' + results[i].get('playerName'));
 
                 var currentCustomer = {}
-                currentCustomer['name'] = results[i].get('name');
-                currentCustomer['surname'] = results[i].get('surname');
-                currentCustomer['city'] = results[i].get('city');
-                currentCustomer['district'] = results[i].get('district');
+                currentCustomer["name"] = results[i].get('name');
+                currentCustomer["surname"] = results[i].get('surname');
+                currentCustomer["address"] = results[i].get('address');
+                currentCustomer["district"] = results[i].get('district');
+                currentCustomer["zip"] = results[i].get('zip');
+                currentCustomer["city"] = results[i].get('city');
+                currentCustomer["phone"] = results[i].get('phone');
+                currentCustomer["mobile"] = results[i].get('mobile');
+                currentCustomer["email"] = results[i].get('email');
+                currentCustomer["notes"] = results[i].get('notes');
+
 
                 jsonContext.push(currentCustomer);
 
             }
+
+            //Updating the app context
+            myApp.template7Data.addressBook = jsonContext;
 
             $$.get('pages/addressBook.html', {}, function (data) {
                 var compiledTemplate = Template7.compile(data);

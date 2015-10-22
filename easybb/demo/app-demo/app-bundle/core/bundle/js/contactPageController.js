@@ -18,6 +18,10 @@ $$(document).on('pageBeforeInit', function (e) {
             street: 'Awesome st'
         };
 
+        //Updating the app context
+        myApp.template7Data.contacts = jsonContext;
+        
+
         $$.get('pages/contacts.html', {}, function (data) {
             var compiledTemplate = Template7.compile(data);
             var htmlContent = compiledTemplate(jsonContext);

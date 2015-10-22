@@ -11,78 +11,59 @@ $$(document).on('pageBeforeInit', function (e) {
             var htmlContent = compiledTemplate(jsonContext);
             $$(page.container).html(htmlContent);
 
-            myApp.alert("Non disponibile", 'Errore!');
-
             // UI Elements Events
-            $$('#registerNowButton').on('click', function(){
+            $$('#createNewCustomerButton').on('click', function(){
                 
                 var formData = myApp.formToJSON('#theForm');
 
-                if (formData.district == "")
+                if (CFStringTrim(formData.name) == "")
                 {
-                    myApp.alert("Seleziona la provincia", "Errore");
+                    myApp.alert("Inserire il nome del cliente", "Errore");
                     return;
                 }
 
-
-                if (formData.email != formData.confirmEmail)
+                if (CFStringTrim(formData.surname) == "")
                 {
-                    myApp.alert("La e-mail e la sua conferma non coincidono.", "Errore");
+                    myApp.alert("Inserire il cognome del cliente", "Errore");
                     return;
                 }
 
-                if (formData.password != formData.confirmPassword)
-                {
-                    myApp.alert("La password e la sua conferma non coincidono.", "Errore");
-                    return;
-                }
+                var Customer = Parse.Object.extend("Customer");
+                var customer = new Customer();
 
-                if (formData.privacyRead != "on")
-                {
-                    myApp.alert("Per poter proseguire devi leggere l'informativa sulla privacy", "Errore");
-                    return;
-                }
+                var currentUser = Parse.User.current();
+                customer.set("owner", currentUser);                
 
-                if (formData.privacyAccepted != "on")
-                {
-                    myApp.alert("Per poter proseguire devi accettare l'informativa sulla privacy", "Errore");
-                    return;
-                }
+                customer.set("name", formData.name);
+                customer.set("surname", formData.surname);
+                customer.set("address", formData.address);
+                customer.set("district", formData.district);
+                customer.set("zip", formData.zip);
+                customer.set("city", formData.city);
 
+                customer.set("phone", formData.phone);
+                customer.set("mobile", formData.mobile);
+                customer.set("email", formData.email);
 
-                var user = new Parse.User();
-                user.set("hotelName", formData.hotelName);
-                user.set("hotelClass", formData.hotelClass);         
-                user.set("district", formData.district);              
-
-                user.set("name", formData.name);
-                user.set("surname", formData.surname);
-                user.set("phoneNumber", formData.phoneNumber);
-
-                user.set("username", formData.email);
-                user.set("password", formData.password);
-                user.set("email", formData.email);
-                user.set("privacyRead", formData.privacyRead);
-                user.set("privacyAccepted", formData.privacyAccepted);
+                customer.set("notes", formData.notes);
 
                 myApp.showPreloader();
 
-                user.signUp(null, {
-                  success: function(user) {
-                    myApp.hidePreloader();
-
-                        myApp.alert('Registrazione effettuata correttamente.', 'Conferma!', function () {
-                            mainView.router.load({url: "pages/login.html", context:{hideTopBackButton:true}});
-                        });
+                customer.save(null, {
+                  success: function(gameScore) {
                     
+                    myApp.hidePreloader();
+                    myApp.alert('Cliente salvato correttamente.', 'Conferma!', function () {
+                        mainView.router.load({url: "pages/addressBook.html"});
+                    });
+
+
                   },
-                  error: function(user, error) {
+                  error: function(gameScore, error) {
                     myApp.hidePreloader();
                     myApp.alert(JSON.stringify(error), 'Errore!');
                   }
-                });
-
-
+                });                
 
             }); 
 

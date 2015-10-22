@@ -23,11 +23,25 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true,
 });
 
+// Configs
+var DEFAULT_AFTER_LOGIN_PAGE = "pages/addressBook.html";
+
 // Initializing Parse Applicaiton
 Parse.initialize("waWFtH73b4CqvFdELBjx4yyMIMvSgeZpx9uqKl1N", "ItBtIyyyTg8gP7jJdnB4pHKlab8JfbTs3z7pc9Fu");
 
+// Check if the user is logged or not
+var currentUser = Parse.User.current();
+if (currentUser) {
+    myApp.showPreloader();
+    setTimeout(function(){
+        myApp.hidePreloader();
+        mainView.router.loadPage(DEFAULT_AFTER_LOGIN_PAGE);
+    }, 500);
+    
+} 
+
 //Debug functions
-function xinspect(o,i){
+function CFXinspect(o,i){
     if(typeof i=='undefined')i='';
     if(i.length>50)return '[MAX ITERATIONS]';
     var r=[];
@@ -36,4 +50,9 @@ function xinspect(o,i){
         r.push(i+'"'+p+'" ('+t+') => '+(t=='object' ? 'object:'+xinspect(o[p],i+'  ') : o[p]+''));
     }
     return r.join(i+'\n');
+}
+
+
+function CFStringTrim(s){ 
+  return ( s || '' ).replace( /^\s+|\s+$/g, '' ); 
 }
