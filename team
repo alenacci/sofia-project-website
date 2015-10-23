@@ -1,0 +1,157 @@
+		<!-- Team start -->
+		<section id="theteam" class="module">
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-sm-6 col-sm-offset-3">
+
+						<h2 class="module-title font-alt">THE TEAM</h2>
+						<div class="module-subtitle font-serif large-text">
+							We met each other as researchers during our Ph.D. and thesis studies in Computer Science and Engineering. We are passionate about our work.
+						</div>
+
+					</div>
+
+				</div><!-- .row -->
+
+				<div class="row">
+
+
+					<!-- Team item star -->
+					<div class="col-sm-6 col-md-4 mb-sm-20 wow fadeInUp" style="visibility: hidden; -webkit-animation-name: none;">
+
+						<div class="team-item">
+							<div class="team-image">
+								<img src="./img/alessandro.png" alt="">
+								<div class="team-detail">
+									<h5 class="font-alt"></h5>
+									<p class="font-serif">If I were a Tarantino character, I'd be Mr. W. Wolf: I solve problems. Accurately, fast, on time.</p>
+									<div class="team-social">
+										<a href="https://www.facebook.com/alessandro.nacci"><i class="fa fa-facebook"></i></a>
+										<a href="https://it.linkedin.com/in/anacci"><i class="fa fa-linkedin"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="team-descr font-alt">
+								<div class="team-name">Alessandro Nacci</div>
+								<div class="team-role">CEO, Co-Founder</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- Team item end -->
+
+					<!-- Team item star -->
+					<div class="col-sm-6 col-md-4 mb-sm-20 wow fadeInUp" style="visibility: hidden; -webkit-animation-name: none;">
+
+						<div class="team-item">
+							<div class="team-image">
+								<img src="./img/riccardo.png" alt="">
+								<div class="team-detail">
+									<h5 class="font-alt"></h5>
+									<p class="font-serif">Passionate about new projects, passionate about customers, passionate about technology. Bottegaio from skin to soul.</p>
+									<div class="team-social">
+										<a href="https://www.facebook.com/cattaneo.riccardo"><i class="fa fa-facebook"></i></a>
+										<a href="https://it.linkedin.com/in/cattaneoriccardo/it"><i class="fa fa-linkedin"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="team-descr font-alt">
+								<div class="team-name">Riccardo Cattaneo</div>
+								<div class="team-role">Strategy and Business, Co-Founder</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- Team item end -->
+
+					<!-- Team item star -->
+					<div class="col-sm-6 col-md-4 mb-sm-20 wow fadeInUp" style="visibility: hidden; -webkit-animation-name: none;">
+
+						<div class="team-item">
+							<div class="team-image">
+								<img src="./img/matteo.jpg" alt="">
+								<div class="team-detail">
+									<h5 class="font-alt"></h5>
+									<p class="font-serif">I love innovation, complex infrastructures and code tidiness. Ah, and asking questions, for a deep understanding of the world.</p>
+									<div class="team-social">
+										<a href="https://www.facebook.com/matt.ferroni"><i class="fa fa-facebook"></i></a>
+										<a href="https://it.linkedin.com/in/matteoferroni/it"><i class="fa fa-linkedin"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="team-descr font-alt">
+								<div class="team-name">Matteo Ferroni</div>
+								<div class="team-role">CTO, Co-Founder</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- Team item end -->
+
+					
+
+
+
+
+				</div>
+				<br>
+				<br>
+				<div class="row">
+
+					<!-- Team item star -->
+					<div class="col-sm-6 col-md-4 mb-sm-20 wow fadeInUp" style="visibility: hidden; -webkit-animation-name: none;">
+
+						<div class="team-item">
+							<div class="team-image">
+								<img src="./img/jacopo.png" alt="">
+								<div class="team-detail">
+									<h5 class="font-alt"></h5>
+									<p class="font-serif">Optimistic by nature, I love finding smart ways to solve problems.</p>
+									<div class="team-social">
+										<a href="https://www.facebook.com/alessandro.nacci"><i class="fa fa-facebook"></i></a>
+										<a href="https://www.facebook.com/jacopo.fiorenza.5"><i class="fa fa-linkedin"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="team-descr font-alt">
+								<div class="team-name">Jacopo Fiorenza</div>
+								<div class="team-role">Software Engineer, Co-Founder</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- Team item end -->
+
+
+					<!-- Team item star -->
+					<div class="col-sm-6 col-md-4 mb-sm-20 wow fadeInUp" style="visibility: hidden; -webkit-animation-name: none;">
+
+						<div class="team-item">
+							<div class="team-image">
+								<img src="./img/andrea.png" alt="">
+								<div class="team-detail">
+									<h5 class="font-alt"></h5>
+									<p class="font-serif">There’s nothing better than sharing ideas and working together.</p>
+									<div class="team-social">
+										<a href="https://www.facebook.com/andre.mariani.9"><i class="fa fa-facebook"></i></a>
+										<a href="https://it.linkedin.com/in/andreamariani91"><i class="fa fa-linkedin"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="team-descr font-alt">
+								<div class="team-name">Andrea Mariani</div>
+								<div class="team-role">Software Engineer, Co-Founder</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- Team item end -->
+
+
+				</div><!-- .row -->
+
+			</div>
+		</section>
+		<!-- Team end -->
