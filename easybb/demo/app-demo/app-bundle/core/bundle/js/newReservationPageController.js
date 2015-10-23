@@ -4,7 +4,11 @@ $$(document).on('pageBeforeInit', function (e) {
     // Code for Services page
     if (page.name === 'newReservation') {
 
-        jsonContext = {};
+        jsonContext = page.context;
+        if (jsonContext.name)
+        {
+            jsonContext['customerSelected'] = true;
+        }
 
         $$.get('pages/newReservation.html', {}, function (data) {
             var compiledTemplate = Template7.compile(data);

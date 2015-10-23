@@ -6,6 +6,7 @@ $$(document).on('pageBeforeInit', function (e) {
 
         //Taking the page context for the new compilation
         jsonContext = page.context;
+        
 
         $$.get('pages/contactDetails.html', {}, function (data) {
             var compiledTemplate = Template7.compile(data);

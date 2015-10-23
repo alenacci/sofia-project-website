@@ -3,7 +3,7 @@
   <div class="navbar-inner">
     <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
     <div class="center sliding">Rubrica</div>
-    <div class="right"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
+    <div class="right"><a href="#" data-panel="right" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
   </div>
 </div>
 <div class="pages">
@@ -24,12 +24,14 @@
         <div class="content-block searchbar-not-found">
           <div class="content-block-inner">Nothing found</div>
         </div>
+
+
      
         <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
         <div class="list-block list-block-search searchbar-found">
-          <ul>{{#each this}}
+          <ul>{{#each contactList}}
             <li>
-                <a href="pages/contactDetails.html" class="item-content item-link" data-context-name="addressBook.{{@index}}">
+                <a href="pages/{{../parameters.itemSelectedPageUrl}}" class="item-content item-link" data-context-name="addressBook.contactList.{{@index}}">
                 <div class="item-inner">
                   <div class="item-title">{{name}} {{surname}}, <small>{{city}} ({{district}})</small></div>
                 </div>

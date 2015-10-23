@@ -3,46 +3,91 @@
   <div class="navbar-inner">
     <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
     <div class="center sliding">Prenotazione</div>
-    <div class="right"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
+    <div class="right"><a href="#" data-panel="right" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
   </div>
 </div>
 <div class="pages">
   <div data-page="newReservation" class="page">
-    <div class="page-content">
 
-        <p>
-          <a href="#" class="button button-big button-round">Seleziona cliente</a>
-        </p>
-
-        <div class="content-block-title">Nuova prenotazione</div>
-        
+  <div class="page-content">
+  
+    <div class="content-block">
+      
+      
+      {{#if customerSelected}}
         <div class="card">
-          <div class="card-header">Antonio Rossi </div>
+          <div class="card-header"><a href="pages/addressBook.html?contactPicker=true"><b>{{name}} {{surname}}</b></a></div>
           <div class="card-content">
             <div class="card-content-inner">
-                Ultima prenotazione: 3 gennaio 2014
+              <small>
+              <p>{{address}}, {{zip}} {{city}} ({{district}})</p>
+              <p><b>Tel.:</b> {{phone}}</p>
+              <p><b>Cel.:</b> {{mobile}}</p>
+              <p><b>E-mail:</b> {{email}}</p>
+              </small>
             </div>
           </div>
-          <div class="card-footer">Torino (TO)</div>
-        </div>
-
-        <div class="content-block-title">Inset</div>
-        <!-- Inset content block -->
-        <div class="content-block inset">
-          <div class="content-block-inner">
-            <p>Donec et nulla auctor massa pharetra adipiscing ut sit amet sem. Suspendisse molestie velit vitae mattis tincidunt. Ut sit amet quam mollis, vulputate turpis vel, sagittis felis. </p>
+          <div class="card-footer">
+            <small>{{notes}}</small>
           </div>
         </div>
+      {{else}}
+        <p><a href="pages/addressBook.html?contactPicker=true" class="button button-round">Seleziona cliente</a></p>
+      {{/if}}
 
 
+
+        <div class="list-block">
+          <ul>
+            <!-- Smart select item -->
+            <li>
+              <!-- Additional "smart-select" class -->
+              <a href="#" class="item-link smart-select" data-open-in="picker">
+                <!-- select -->
+                <select name="selectedRoom">
+                  <option value="1" selected>Stanza 1</option>
+                  <option value="2" selected>Stanza 2</option>
+                  <option value="3" selected>Stanza 3</option>
+                  <option value="4" selected>Stanza 4</option>
+                  <option value="5" selected>Stanza 5</option>
+                  <option value="6" selected>Stanza 6</option>
+                  <option value="7" selected>Stanza 7</option>
+                  <option value="8" selected>Stanza 8</option>
+                  <option value="9" selected>Stanza 9</option>
+                  <option value="10" selected>Stanza 10</option>
+                </select>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <!-- Select label -->
+                    <div class="item-title">Stanza</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <!-- Another smart selects or list view elements -->
+            <!-- ...  -->
+          </ul>
+        </div>  
+
+
+        <div class="content-block-title">Gestione camere</div>
         <div class="content-block">
             <div style="padding:0; margin-right:-15px; width:auto" class="content-block-inner">
                 <div id="calendar-inline-container"></div>
             </div>
-        </div>     
+        </div>         
 
 
     </div>
+
+
+
+
+
+  </div>
+    
+  
+
   </div>
 </div>
 

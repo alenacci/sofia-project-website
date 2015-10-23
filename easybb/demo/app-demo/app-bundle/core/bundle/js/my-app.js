@@ -24,7 +24,7 @@ var mainView = myApp.addView('.view-main', {
 });
 
 // Configs
-var DEFAULT_AFTER_LOGIN_PAGE = "pages/addressBook.html";
+var DEFAULT_AFTER_LOGIN_PAGE = "pages/newReservation.html";
 
 // Initializing Parse Applicaiton
 Parse.initialize("waWFtH73b4CqvFdELBjx4yyMIMvSgeZpx9uqKl1N", "ItBtIyyyTg8gP7jJdnB4pHKlab8JfbTs3z7pc9Fu");
@@ -39,6 +39,14 @@ if (currentUser) {
     }, 500);
     
 } 
+
+//Default pages beahviours
+
+$$(document).on('pageBeforeInit', function (e) {
+    myApp.closePanel();
+});
+
+
 
 //Debug functions
 function CFXinspect(o,i){

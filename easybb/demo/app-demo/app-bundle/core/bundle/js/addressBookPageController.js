@@ -17,7 +17,14 @@ $$(document).on('pageBeforeInit', function (e) {
             //alert("Successfully retrieved " + results.length + " scores.");
             // Do something with the returned Parse.Object values
 
-            jsonContext = []
+            jsonContext = {
+                contactList:[],
+                parameters:
+                {
+                    itemSelectedPageUrl : "contactDetails.html"
+                }
+            }
+
 
             for (var i = 0; i < results.length; i++) {
               //alert(results[i].id + ' - ' + results[i].get('playerName'));
@@ -35,12 +42,18 @@ $$(document).on('pageBeforeInit', function (e) {
                 currentCustomer["notes"] = results[i].get('notes');
 
 
-                jsonContext.push(currentCustomer);
+                jsonContext.contactList.push(currentCustomer);
 
             }
 
+            if (page.query.contactPicker)
+            {
+                jsonContext.parameters.itemSelectedPageUrl = "newReservation.html"
+            }
+            
             //Updating the app context
             myApp.template7Data.addressBook = jsonContext;
+
 
             $$.get('pages/addressBook.html', {}, function (data) {
                 var compiledTemplate = Template7.compile(data);
