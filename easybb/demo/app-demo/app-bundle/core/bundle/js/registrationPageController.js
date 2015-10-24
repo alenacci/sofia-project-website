@@ -81,10 +81,42 @@ $$(document).on('pageBeforeInit', function (e) {
 
                 user.signUp(null, {
                   success: function(user) {
-                    myApp.hidePreloader();
+                        myApp.hidePreloader();
+                        
+                        myApp.alert('Registrazione effettuata correttamente. Ora creo le tue camere.', 'Conferma!', function () {
+                            
+                            myApp.showPreloader();
 
-                        myApp.alert('Registrazione effettuata correttamente.', 'Conferma!', function () {
-                            mainView.router.load({url: "pages/login.html", context:{hideTopBackButton:true}});
+                            // Pre-populating the B&B rooms....
+
+                            var Room = Parse.Object.extend("Room");
+
+                            // this will store the rows for use with Parse.Object.saveAll
+                            var roomArray = [];
+
+                            // create a few objects, with a random state 0 or 1.
+                            for (var i = 0; i < 10; i++) { 
+                              var room = new Room();
+                              room.set('number',i+1);
+                              room.set('name',"Stanza " + (i+1));
+                              room.set('description', "");
+                              room.set('owner', user);
+                              roomArray.push(room);
+                            }
+
+                            // save all the newly created objects
+                            Parse.Object.saveAll(roomArray, {
+                                success: function(objs) {
+                                    myApp.hidePreloader();
+                                    mainView.router.load({url: "pages/login.html", context:{hideTopBackButton:true}});
+                                },
+                                error: function(error) { 
+                                    myApp.hidePreloader();
+                                    myApp.alert(JSON.stringify(error), 'Errore!');
+
+                                }
+                            });
+                            
                         });
                     
                   },

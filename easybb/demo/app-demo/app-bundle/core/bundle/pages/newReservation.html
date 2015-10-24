@@ -35,8 +35,7 @@
         <p><a href="pages/addressBook.html?contactPicker=true" class="button button-round">Seleziona cliente</a></p>
       {{/if}}
 
-
-
+        <div class="content-block-title">Seleziona camera</div>
         <div class="list-block">
           <ul>
             <!-- Smart select item -->
@@ -44,7 +43,7 @@
               <!-- Additional "smart-select" class -->
               <a href="#" class="item-link smart-select" data-open-in="picker">
                 <!-- select -->
-                <select name="selectedRoom">
+                <select name="selectedRoom" id="selectedRoom">
                   <option value="1" selected>Stanza 1</option>
                   <option value="2" selected>Stanza 2</option>
                   <option value="3" selected>Stanza 3</option>
@@ -60,22 +59,26 @@
                   <div class="item-inner">
                     <!-- Select label -->
                     <div class="item-title">Stanza</div>
+                    <!-- Selected value, not required -->
+                    <div class="item-after">Stanza 1</div>
                   </div>
                 </div>
               </a>
             </li>
-            <!-- Another smart selects or list view elements -->
-            <!-- ...  -->
           </ul>
-        </div>  
+        </div>   
 
+              
 
-        <div class="content-block-title">Gestione camere</div>
+        <div class="content-block-title">Visualizzazione prenotazioni</div>
+        
         <div class="content-block">
             <div style="padding:0; margin-right:-15px; width:auto" class="content-block-inner">
                 <div id="calendar-inline-container"></div>
             </div>
         </div>         
+
+        <div class="content-block-title">Prenotazione soggiorno</div>
 
 
     </div>

@@ -24,7 +24,7 @@ var mainView = myApp.addView('.view-main', {
 });
 
 // Configs
-var DEFAULT_AFTER_LOGIN_PAGE = "pages/newReservation.html";
+var DEFAULT_AFTER_LOGIN_PAGE = "pages/settings.html";
 
 // Initializing Parse Applicaiton
 Parse.initialize("waWFtH73b4CqvFdELBjx4yyMIMvSgeZpx9uqKl1N", "ItBtIyyyTg8gP7jJdnB4pHKlab8JfbTs3z7pc9Fu");

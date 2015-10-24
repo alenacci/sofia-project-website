@@ -1,0 +1,90 @@
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="center sliding">Camere</div>
+    <div class="right"><a href="#" data-panel="right" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="settingsRooms" class="page">
+    <div class="page-content">
+      
+
+      <form id="hotelSizeForm" class="list-block">
+        <div class="content-block-title">Dimensione struttura</div>
+        <ul>
+          <li class="align-top">
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">Numero</div>
+                <div class="item-input">
+                  <select name="numberOfRooms">
+                    {{#parameters}}
+                    <option>{{roomsNumber}}</option>
+                    {{/parameters}}
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </li>       
+        </ul>
+      </form>
+
+      <div class="content-block">
+        <a href="#" class="button" id="saveRoomNumberButton">Salva numero camere</a>
+      </div>
+
+
+      <form id="theForm" class="list-block">
+
+        {{#each bbRooms}}
+        <div class="content-block-title">Camera {{number}}</div>
+        <ul>
+          <!-- Text inputs -->
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">Nome</div>
+                <div class="item-input">
+                  <input type="email" placeholder="Nome camera" name="roomName_{{@index}}" value="{{name}}">
+                  <input type="hidden" name="roomId_{{@index}}" value="{{objectId}}">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="align-top">
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">Descrizione</div>
+                <div class="item-input">
+                    <textarea name="roomDescription_{{@index}}">{{description}}</textarea>
+                </div>
+              </div>
+            </div>
+          </li>       
+        </ul>
+        {{/each}}
+      </form>
+
+      <div class="content-block">
+        <a href="#" class="button" id="saveRoomsSettingsButton">Salva modifiche</a>
+      </div>
+
+    </div>
+
+
+
+    </div>
+  </div>
+</div>

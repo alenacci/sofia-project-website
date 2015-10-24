@@ -16,6 +16,11 @@ $$(document).on('pageBeforeInit', function (e) {
             $$(page.container).html(htmlContent);
 
 
+            $$('#selectedRoom').on('change', function (e) { 
+              alert("value changed");
+            });
+
+
             var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August' , 'September' , 'October', 'November', 'December'];
              
             var calendarInline = myApp.calendar({
