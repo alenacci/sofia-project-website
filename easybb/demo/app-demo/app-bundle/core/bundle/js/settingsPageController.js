@@ -24,6 +24,10 @@ $$(document).on('pageBeforeInit', function (e) {
                 mainView.router.loadPage("pages/settingsRooms.html")
             }); 
 
+            $$('#managePriceButton').on('click', function(){
+                mainView.router.loadPage("pages/settingsPrice.html")
+            });             
+
             $$('#paymentButton').on('click', function(){
                 myApp.alert("Questa è una versione Beta. Il servizio di pagamento non è ancora arrivo. Per maggiori informazioni scrivi a info@sofiasmartliving.com.", 'Informazione');
             }); 

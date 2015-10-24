@@ -83,7 +83,7 @@ $$(document).on('pageBeforeInit', function (e) {
                   success: function(user) {
                         myApp.hidePreloader();
                         
-                        myApp.alert('Registrazione effettuata correttamente. Ora creo le tue camere.', 'Conferma!', function () {
+                        myApp.alert('Registrazione effettuata correttamente. Creo la tua struttura.', 'Conferma!', function () {
                             
                             myApp.showPreloader();
 
@@ -104,11 +104,32 @@ $$(document).on('pageBeforeInit', function (e) {
                               roomArray.push(room);
                             }
 
-                            // save all the newly created objects
+                            
                             Parse.Object.saveAll(roomArray, {
                                 success: function(objs) {
-                                    myApp.hidePreloader();
-                                    mainView.router.load({url: "pages/login.html", context:{hideTopBackButton:true}});
+
+                                    // Pre-populating the B&B settings....
+                                    var Setting = Parse.Object.extend("Setting");
+                                    var setting = new Setting();
+
+                                    setting.set("owner", user);
+                                    setting.set("singlePrice", 0);
+                                    setting.set("doublePrice", 0);
+                                    setting.set("triplePrice", 0);
+                                    setting.set("quadruplePrice", 0);
+                                    setting.set("currency", "EUR");
+
+                                    setting.save(null, {
+                                      success: function(setting) {
+                                        myApp.hidePreloader();
+                                        mainView.router.load({url: "pages/login.html", context:{hideTopBackButton:true}});
+                                      },
+                                      error: function(setting, error) {
+                                        myApp.hidePreloader();
+                                        myApp.alert(JSON.stringify(error), 'Errore!');
+                                      }
+                                    });      
+
                                 },
                                 error: function(error) { 
                                     myApp.hidePreloader();
