@@ -30,6 +30,7 @@ $$(document).on('pageBeforeInit', function (e) {
               //alert(results[i].id + ' - ' + results[i].get('playerName'));
 
                 var currentCustomer = {}
+                currentCustomer["id"] = results[i].id;
                 currentCustomer["name"] = results[i].get('name');
                 currentCustomer["surname"] = results[i].get('surname');
                 currentCustomer["address"] = results[i].get('address');

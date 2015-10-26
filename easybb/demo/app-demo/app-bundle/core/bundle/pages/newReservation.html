@@ -10,9 +10,10 @@
   <div data-page="newReservation" class="page">
 
   <div class="page-content">
-  
+  <form id="theForm">
     <div class="content-block">
       
+      <div class="content-block-title">Seleziona cliente</div>
       
       {{#if customerSelected}}
         <div class="card">
@@ -31,66 +32,87 @@
             <small>{{notes}}</small>
           </div>
         </div>
+        <input type="hidden" value="{{id}}" name="customerId">
       {{else}}
         <p><a href="pages/addressBook.html?contactPicker=true" class="button button-round">Seleziona cliente</a></p>
+        <p><a href="pages/newCustomer.html" class="button button-round">Nuovo cliente</a></p>
       {{/if}}
 
-        <div class="content-block-title">Seleziona camera</div>
+
+
+
+        <div class="content-block-title">Data Check-in</div>
         <div class="list-block">
           <ul>
-            <!-- Smart select item -->
             <li>
-              <!-- Additional "smart-select" class -->
-              <a href="#" class="item-link smart-select" data-open-in="picker">
-                <!-- select -->
-                <select name="selectedRoom" id="selectedRoom">
-                  <option value="1" selected>Stanza 1</option>
-                  <option value="2" selected>Stanza 2</option>
-                  <option value="3" selected>Stanza 3</option>
-                  <option value="4" selected>Stanza 4</option>
-                  <option value="5" selected>Stanza 5</option>
-                  <option value="6" selected>Stanza 6</option>
-                  <option value="7" selected>Stanza 7</option>
-                  <option value="8" selected>Stanza 8</option>
-                  <option value="9" selected>Stanza 9</option>
-                  <option value="10" selected>Stanza 10</option>
-                </select>
-                <div class="item-content">
-                  <div class="item-inner">
-                    <!-- Select label -->
-                    <div class="item-title">Stanza</div>
-                    <!-- Selected value, not required -->
-                    <div class="item-after">Stanza 1</div>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-input">
+                    <input type="text" placeholder="Data check-in" readonly id="calendar-checkin-date" name="checkinDate">
                   </div>
                 </div>
-              </a>
+              </div>
             </li>
           </ul>
-        </div>   
+        </div> 
 
-              
+        <div class="content-block-title">Data Check-out</div>
+        <div class="list-block">
+          <ul>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-input">
+                    <input type="text" placeholder="Data check-out" readonly id="calendar-checkout-date" name="checkoutDate">
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-        <div class="content-block-title">Visualizzazione prenotazioni</div>
-        
-        <div class="content-block">
-            <div style="padding:0; margin-right:-15px; width:auto" class="content-block-inner">
-                <div id="calendar-inline-container"></div>
-            </div>
-        </div>         
+        <p><a href="#" class="button button-round" id="checkRoomAvailabilityButton">Verifica disponibilità</a></p>
 
-        <div class="content-block-title">Prenotazione soggiorno</div>
+        <div id="availableRoomsListBlock">
+        </div>
+            
+        <div id="reservationDetailsSection">
 
+          <div class="content-block-title">Dettagli prenotazione</div>
+          <div class="list-block">
+            <ul>
+              <!-- Text inputs -->
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">Ospiti</div>
+                    <div class="item-input">
+                      <input type="text" placeholder="Numero ospiti" name="numberOfGuests">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="align-top">
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">Note</div>
+                    <div class="item-input">
+                        <textarea name="reservationNotes"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </li>            
+            </ul>
+          </div>     
+
+
+          <p><a href="#" class="button button-round" id="saveReservationButton">Salva prenotazione</a></p>
+          
 
     </div>
 
-
-
-
-
+    </form>
   </div>
-    
-  
-
   </div>
 </div>
 
