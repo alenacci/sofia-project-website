@@ -33,6 +33,19 @@
 </head>
 
 <script>
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+    function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+  }
+
+</script>
+
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -282,7 +295,7 @@
 	
 				<div class="row">
 	
-					<div class="col-sm-6">
+					<div class="col-sm-6" id="companyDetails">
 						<br>
 						<p class="copyright font-alt">© 2015 <a href="mailto:info@bottega52.it">Sofia SRL - Milano (MI) - Italy</a>
 						<br>Piazza della Vittoria 47 26900 Lodi (LO) P.IVA/CF 09129330966 </p>
@@ -302,6 +315,21 @@
 	<div class="scroll-up">
 		<a href="#totop"><i class="fa fa-angle-double-up"></i></a>
 	</div>
+
+	<script type="text/javascript">
+
+		if (getUrlVars()["from"] == "bottega52")
+		{
+
+			var html = 	'<br>
+						<p class="copyright font-alt">© 2015 <a href="mailto:info@bottega52.it">Bottega52 SRL - Milano (MI) - Italy</a>
+						<br>Piazza della Vittoria 47 26900 Lodi (LO) P.IVA/CF 08848340967 </p>
+						<p><a target="_blacnk" href="http://www.bottega52.it/privacy.html">PRIVACY POLICY</a> </p>';
+
+			document.getElementById("id").companyDetails = "<br>";
+		}
+
+	</script>
 	
 	<!-- Javascript files -->
 	<script src="assets/js/jquery-2.1.3.min.js"></script>
