@@ -318,11 +318,15 @@ function getUrlVars() {
 
 	<script type="text/javascript">
 
+
+
 		if (getUrlVars()["from"] == "bottega52")
 		{
 
+
+
 			var html = 	'<br><p class="copyright font-alt">© 2015 <a href="mailto:info@bottega52.it">Bottega52 SRL - Milano (MI) - Italy</a><br>Piazza della Vittoria 47 26900 Lodi (LO) P.IVA/CF 08848340967 </p><p><a target="_blacnk" href="http://www.bottega52.it/privacy.html">PRIVACY POLICY</a></p>';
-			document.getElementById("companyDetails").companyDetails = html;
+			document.getElementById("companyDetails").innerHTML = html;
 		}
 
 	</script>
